@@ -18,7 +18,7 @@ public class WineQualityTraining {
         SparkSession sparkSession = SparkSession.builder().
                 appName("WineQualityTraining").master("local[*]").getOrCreate();
         String path = "TrainingDataset.csv";
-//        String modelPath = "../";
+        String modelPath = "../model";
 
 
         Dataset<Row> trainData = sparkSession.read().option("delimiter", ";").option("inferSchema", "true")
@@ -84,11 +84,11 @@ public class WineQualityTraining {
 
         Dataset<Row> dtModelPredictions = dtModel.transform(validationData);
         dtModelPredictions.show();
-//        try {
-//            dtModel.write().overwrite().save(modelPath);
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
+        try {
+            dtModel.write().overwrite().save(modelPath);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
 //        Dataset<Row> gbtModelPredictions = gbtModel.transform(validationData);
 //        gbtModelPredictions.show();
