@@ -14,11 +14,16 @@ import java.io.IOException;
 import java.util.Arrays;
 
 public class WineQualityTraining {
+
     public static void main(String[] args){
+//        SparkSession sparkSession = SparkSession.builder().
+//                appName("WineQualityTraining").master("local[*]").getOrCreate();
         SparkSession sparkSession = SparkSession.builder().
-                appName("WineQualityTraining").master("local[*]").getOrCreate();
+                appName("WineQualityTraining").getOrCreate();
         String path = "TrainingDataset.csv";
-        String modelPath = "../model";
+//        String modelPath = "../model";
+//        String modelPath= "hdfs:///user/hadoop/";
+        String modelPath ="s3a://wine-quality-model/decision-tree";
 
 
         Dataset<Row> trainData = sparkSession.read().option("delimiter", ";").option("inferSchema", "true")

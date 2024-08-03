@@ -52,6 +52,11 @@
             <artifactId>spark-mllib_2.12</artifactId>
             <version>3.4.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-aws</artifactId>
+            <version>3.3.4</version>
+        </dependency>
 
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
