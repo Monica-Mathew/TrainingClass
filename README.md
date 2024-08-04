@@ -9,7 +9,7 @@ mvn clean package
 ```
 
 
-#### Running the project
+#### Running the project locally
 ```
 spark-submit --class org.example.WineQualityTraining --master 'local[*]' target/original-TrainingClass-1.0-SNAPSHOT.jar
 ```
