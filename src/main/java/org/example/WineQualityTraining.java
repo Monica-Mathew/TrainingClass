@@ -15,7 +15,7 @@ public class WineQualityTraining {
         SparkSession sparkSession = SparkSession.builder().
                 appName("WineQualityTraining").getOrCreate();
         String path = "TrainingDataset.csv";
-//        String modelPath = "../model"; //local tetsing
+//        String modelPath = "../model"; //local testing
         String modelPath= "hdfs:///user/hadoop/";
 
 
